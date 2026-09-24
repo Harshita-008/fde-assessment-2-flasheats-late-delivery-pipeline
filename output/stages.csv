@@ -1,0 +1,7 @@
+stage,on_time_median_min,late_median_min
+created -> assigned,2.3,2.3
+assigned -> picked up,16.6,28.8
+picked up -> delivered,45.5,49.0
+pickup slip vs estimate,1.8,13.9
+transit vs plan,-7.9,-5.9
+delay vs promise,-5.5,8.0

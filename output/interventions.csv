@@ -1,0 +1,5 @@
+intervention_type,orders,late_rate,comparable_late_rate,naive_baseline,difference_pts
+CUSTOMER_CREDIT,17,1.0,0.958,0.564,4.169
+DRIVER_REASSIGNMENT,147,0.578,0.544,0.564,3.448
+PRIORITY_DISPATCH,89,0.528,0.546,0.564,-1.745
+RESTAURANT_CONTACT,110,0.527,0.547,0.564,-1.951

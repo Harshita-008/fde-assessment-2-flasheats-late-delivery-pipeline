@@ -1,0 +1,16 @@
+2026-09-25 02:30:46,539 INFO    pipeline: run 20260924T210046Z started from snapshot 20260924T210041Z
+2026-09-25 02:30:46,559 INFO    pipeline.ingest: snapshot 20260924T210041Z verified against manifest
+2026-09-25 02:30:46,662 INFO    pipeline.validate: V01 [correct] order_id is unique: 3 failed
+2026-09-25 02:30:46,666 INFO    pipeline.validate: V02 [correct] final_status uses standard lowercase values: 5 failed
+2026-09-25 02:30:46,667 INFO    pipeline.validate: V04 [correct] traffic_bucket uses standard values: 3 failed
+2026-09-25 02:30:46,672 WARNING pipeline.validate: V06 [quarantine] promised_eta is after order creation: 4 failed
+2026-09-25 02:30:46,673 WARNING pipeline.validate: V07 [warn] restaurant_id and driver_id are present: 6 failed
+2026-09-25 02:30:46,673 WARNING pipeline.validate: V08 [warn] distance_km_estimate looks measured (not the 18.0 default): 806 failed
+2026-09-25 02:30:46,688 WARNING pipeline.validate: V11 [warn] GPS ping is inside Bengaluru: 76 failed
+2026-09-25 02:30:46,707 INFO    pipeline.validate: V12 [correct] delivered order has a delivery time in orders DB: 37 failed
+2026-09-25 02:30:46,709 INFO    pipeline.validate: V15 [correct] DB pickup_at agrees with driver app pickup: 5 failed
+2026-09-25 02:30:46,710 WARNING pipeline.validate: V16 [warn] cancelled order has no pickup_at in DB: 68 failed
+2026-09-25 02:30:46,711 WARNING pipeline.validate: V18 [warn] picked_up is after driver assignment: 14 failed
+2026-09-25 02:30:46,717 WARNING pipeline.validate: V20 [quarantine] intervention happens after the order was created: 1 failed
+2026-09-25 02:30:46,720 WARNING pipeline.validate: V21 [warn] logged DRIVER_REASSIGNMENT is visible in dispatch: 147 failed
+2026-09-25 02:30:47,363 INFO    pipeline: run 20260924T210046Z succeeded: M1 late rate 56.5% (863/1528)

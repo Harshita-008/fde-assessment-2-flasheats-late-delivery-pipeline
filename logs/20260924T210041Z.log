@@ -1,0 +1,24 @@
+2026-09-25 02:30:41,964 INFO    pipeline: run 20260924T210041Z started
+2026-09-25 02:30:41,989 INFO    pipeline.ingest: SQL orders: 1603 rows
+2026-09-25 02:30:41,991 INFO    pipeline.ingest: SQL restaurants: 60 rows
+2026-09-25 02:30:41,994 INFO    pipeline.ingest: SQL drivers: 120 rows
+2026-09-25 02:30:42,063 WARNING pipeline.api_client: page 3 attempt 1 failed (HTTP 500), retrying in 1s
+2026-09-25 02:30:43,099 WARNING pipeline.api_client: page 5 attempt 1 failed (rate limited), retrying in 1s
+2026-09-25 02:30:44,327 INFO    pipeline.api_client: dispatch API: 1600 records over 16 pages (2 retries)
+2026-09-25 02:30:44,407 INFO    pipeline.ingest: file driver_events.json: 10035 records
+2026-09-25 02:30:44,428 INFO    pipeline.ingest: file order_interventions.csv: 430 records
+2026-09-25 02:30:44,456 INFO    pipeline.ingest: file order_outcomes.csv: 1600 records
+2026-09-25 02:30:44,880 INFO    pipeline.validate: V01 [correct] order_id is unique: 3 failed
+2026-09-25 02:30:44,883 INFO    pipeline.validate: V02 [correct] final_status uses standard lowercase values: 5 failed
+2026-09-25 02:30:44,884 INFO    pipeline.validate: V04 [correct] traffic_bucket uses standard values: 3 failed
+2026-09-25 02:30:44,889 WARNING pipeline.validate: V06 [quarantine] promised_eta is after order creation: 4 failed
+2026-09-25 02:30:44,889 WARNING pipeline.validate: V07 [warn] restaurant_id and driver_id are present: 6 failed
+2026-09-25 02:30:44,890 WARNING pipeline.validate: V08 [warn] distance_km_estimate looks measured (not the 18.0 default): 806 failed
+2026-09-25 02:30:44,905 WARNING pipeline.validate: V11 [warn] GPS ping is inside Bengaluru: 76 failed
+2026-09-25 02:30:44,917 INFO    pipeline.validate: V12 [correct] delivered order has a delivery time in orders DB: 37 failed
+2026-09-25 02:30:44,918 INFO    pipeline.validate: V15 [correct] DB pickup_at agrees with driver app pickup: 5 failed
+2026-09-25 02:30:44,918 WARNING pipeline.validate: V16 [warn] cancelled order has no pickup_at in DB: 68 failed
+2026-09-25 02:30:44,919 WARNING pipeline.validate: V18 [warn] picked_up is after driver assignment: 14 failed
+2026-09-25 02:30:44,922 WARNING pipeline.validate: V20 [quarantine] intervention happens after the order was created: 1 failed
+2026-09-25 02:30:44,923 WARNING pipeline.validate: V21 [warn] logged DRIVER_REASSIGNMENT is visible in dispatch: 147 failed
+2026-09-25 02:30:45,636 INFO    pipeline: run 20260924T210041Z succeeded: M1 late rate 56.5% (863/1528)

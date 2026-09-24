@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Pipeline temp folder (outputs are staged here before publishing)
+.staging_*/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

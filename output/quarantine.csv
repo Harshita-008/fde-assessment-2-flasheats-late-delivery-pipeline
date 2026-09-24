@@ -1,0 +1,6 @@
+entity,id,rule_id,reason
+order,O00101,V06,promised_eta is after order creation
+order,O00102,V06,promised_eta is after order creation
+order,O00103,V06,promised_eta is after order creation
+order,O00104,V06,promised_eta is after order creation
+intervention,INT-00268,V20,intervention happens after the order was created

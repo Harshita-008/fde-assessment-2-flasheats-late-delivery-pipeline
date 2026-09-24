@@ -1,0 +1,5 @@
+stage_at_intervention,interventions,median_min_since_created
+after_delivery,45,83.8
+awaiting_pickup,236,18.0
+in_transit,128,26.0
+not_delivered,20,17.0

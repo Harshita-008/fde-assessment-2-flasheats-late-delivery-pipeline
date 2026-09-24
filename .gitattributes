@@ -1,0 +1,2 @@
+# Raw snapshots are checksummed in manifest.json - store them byte-for-byte
+raw/** -text

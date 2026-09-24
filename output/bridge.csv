@@ -1,0 +1,7 @@
+step,late,orders,late_rate,note
+Dashboard as reported (Data Team),844,1498,0.5634,reproduces the 56% claim
+- duplicate order rows,843,1495,0.5639,3 orders counted twice
++ delivery times from driver app,867,1532,0.5659,orders DB was missing the timestamp
+- impossible promises (quarantined) = M1,863,1528,0.5648,promised_eta before order creation
+Support Lead: > 10 min late,354,1528,0.2317,= M2
+If cancelled orders stay in the denominator,863,1600,0.5394,"Finance: not recommended, hides lateness"

@@ -1,0 +1,93 @@
+{
+  "run_id": "20260924T210041Z",
+  "retrieved_at": "2026-09-24T21:00:44.764909+00:00",
+  "sources": [
+    {
+      "source": "sqlite:orders",
+      "mode": "SQL",
+      "path": "sql/orders.csv",
+      "rows": 1603,
+      "completeness": "1603 == COUNT(*) 1603",
+      "sha256": {
+        "orders.csv": "2f50fee435bf39c9e32ae4c94cbf8c0354e86dd70378f77c06ddd78d3274096a"
+      }
+    },
+    {
+      "source": "sqlite:restaurants",
+      "mode": "SQL",
+      "path": "sql/restaurants.csv",
+      "rows": 60,
+      "completeness": "60 == COUNT(*) 60",
+      "sha256": {
+        "restaurants.csv": "79632ee3d227fab269f69b02d784a0a039383f6816c17f7c521fc79fafb49a7d"
+      }
+    },
+    {
+      "source": "sqlite:drivers",
+      "mode": "SQL",
+      "path": "sql/drivers.csv",
+      "rows": 120,
+      "completeness": "120 == COUNT(*) 120",
+      "sha256": {
+        "drivers.csv": "fccaea9943cd6097de6347bf0fff70a782a97ce22a8041771168bc5987a6e1e1"
+      }
+    },
+    {
+      "source": "api:/dispatch/orders",
+      "mode": "API",
+      "path": "api/",
+      "rows": 1600,
+      "completeness": "1600 == total_records 1600, ids unique",
+      "pages": 16,
+      "retries": 2,
+      "sha256": {
+        "page_001.json": "7bb66a156c2829a1173b9f277faea025014dc4fbaec4f7a7d2c5f5a29028cc09",
+        "page_002.json": "eccdac3d8ab7b36ad334a39ddc4ac25b6507a03dc4d381bb4f561fb5334e2ebc",
+        "page_003.json": "add8e7d1dd18ce6ac79f6f774b1e98a7da694e2807d19dc8ea0868179d369903",
+        "page_004.json": "cb8c9c0ab93ca86f384c80fd867fd6c357123ba17730b925604d171c9f599f8d",
+        "page_005.json": "519f5aab5daf005bd4b0a9a74b60be890e2679d77d8cbd1d87e850322a58e15f",
+        "page_006.json": "41b117e70a9483215a2050628afcb63204e425b1d2230df7efcdd2dd6f9992e2",
+        "page_007.json": "858e700c7b82fccc250cbd53d3ea26f9cefbbb793410087dc4423115d24aabbd",
+        "page_008.json": "2a55d1da76b5f274d16f75be437c09fb9c614d88c5f2c9b71c56f01af68788d4",
+        "page_009.json": "0fb86f7e60021cf29db8f7558f47396fcf91255e9b6c41d842fb5815a7874ea0",
+        "page_010.json": "b77235b190f48b3522cc3194d4fef4a3d45323e84a68f69da4864413a3c60eea",
+        "page_011.json": "f11c4f448e4547b88ceef28271ab9bcf9f694774bd346b8b7a63c6ddde0a4da2",
+        "page_012.json": "06e0b2d4108a0811617386bf7e816f6b082e05deebb8de24146b4f7cfd11b40d",
+        "page_013.json": "3b8ab4ef3a602d53ecb1c1c9d02e95a1a5886f32aef88e404ed38f35c444bde9",
+        "page_014.json": "9f23b07dd85ec4f67db9316846ced84fcbe07a090eb4431abf50af410c951a0b",
+        "page_015.json": "34e801461accd2e584bd8ea2940fe415b2e3a010581c43c5297c6dc83365daea",
+        "page_016.json": "600b06d8236d81b37452e031bd7244198ce2d9bc8960c65817e709a2e903fedb"
+      }
+    },
+    {
+      "source": "file:driver_events.json",
+      "mode": "file",
+      "path": "files/driver_events.json",
+      "rows": 10035,
+      "completeness": "sha256 of copy matches source",
+      "sha256": {
+        "driver_events.json": "8102eaec0ec206bc35abadf196f99f2267816b020bfe37ab352fa3f26274ab49"
+      }
+    },
+    {
+      "source": "file:order_interventions.csv",
+      "mode": "file",
+      "path": "files/order_interventions.csv",
+      "rows": 430,
+      "completeness": "sha256 of copy matches source",
+      "sha256": {
+        "order_interventions.csv": "d66af21244f9e1617abe2c51dce39dcad08fc6a308c8cbfbf189c7ba110c86e8"
+      }
+    },
+    {
+      "source": "file:order_outcomes.csv",
+      "mode": "file",
+      "path": "files/order_outcomes.csv",
+      "rows": 1600,
+      "completeness": "sha256 of copy matches source",
+      "sha256": {
+        "order_outcomes.csv": "dbe10b2f532bbcff5ea6aa05e32487254ba5dc9da18cba6bc39a29e9a77d3dc9"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+metric_id,metric,value,numerator,denominator,definition
+M1,Late Delivery Rate,0.5648,863,1528,delivered orders arriving after promised_eta / delivered orders with a valid promise
+M2,Severe Late Rate,0.2317,354,1528,delivered orders more than 10 min after promised_eta / same population
+M3,Pre-pickup share of late minutes,0.9891,13566.2,13715.8,late orders: minutes of pickup slip (actual vs estimated pickup) / (pickup slip + transit overrun minutes)
+M4,Preventive intervention coverage,0.1958,169,863,late orders that got any intervention while still awaiting pickup / late orders
+M5.CUSTOMER_CREDIT,Late rate after CUSTOMER_CREDIT vs comparable,4.2,,17,"late rate of intervened orders minus late rate of comparable non-intervened orders (same stage, same minute), in points"
+M5.DRIVER_REASSIGNMENT,Late rate after DRIVER_REASSIGNMENT vs comparable,3.4,,147,"late rate of intervened orders minus late rate of comparable non-intervened orders (same stage, same minute), in points"
+M5.PRIORITY_DISPATCH,Late rate after PRIORITY_DISPATCH vs comparable,-1.7,,89,"late rate of intervened orders minus late rate of comparable non-intervened orders (same stage, same minute), in points"
+M5.RESTAURANT_CONTACT,Late rate after RESTAURANT_CONTACT vs comparable,-2.0,,110,"late rate of intervened orders minus late rate of comparable non-intervened orders (same stage, same minute), in points"

@@ -1,0 +1,23 @@
+rule_id,source,rule,severity,failed,action,examples
+V01,orders,order_id is unique,correct,3,"kept first row; the copies disagree on traffic_bucket, so traffic for these is uncertain","O00120, O00723, O01302"
+V02,orders,final_status uses standard lowercase values,correct,5,lower-cased (e.g. 'Delivered'),"O00201, O00202, O00203, O00204, O00205"
+V03,orders,final_status is delivered or cancelled,quarantine,0,-,
+V04,orders,traffic_bucket uses standard values,correct,3,lower-cased (e.g. 'HIGH'),"O00206, O00207, O00208"
+V05,orders,traffic/weather bucket is a known value,warn,0,-,
+V06,orders,promised_eta is after order creation,quarantine,4,excluded: lateness cannot be judged against an impossible promise,"O00101, O00102, O00103, O00104"
+V07,orders,restaurant_id and driver_id are present,warn,6,kept in KPI; driver taken from dispatch; excluded from restaurant breakdowns,"O00401, O00402, O00403, O00404, O00405"
+V08,orders,distance_km_estimate looks measured (not the 18.0 default),warn,806,distance not used in any metric,"O00001, O00005, O00007, O00008, O00014"
+V09,dispatch,every order has exactly one dispatch record,block,0,-,
+V10,dispatch,dispatch_status agrees with order status,warn,0,-,
+V11,driver_events,GPS ping is inside Bengaluru,warn,76,pings not used in metrics,"O00374, O00947, O00603, O00868, O00371"
+V12,orders vs driver_events,delivered order has a delivery time in orders DB,correct,37,delivery time taken from driver app (system of record for delivery),"O00043, O00095, O00127, O00206, O00286"
+V13,orders vs driver_events,delivered order has a delivery time in some system,quarantine,0,-,
+V14,orders vs driver_events,DB and driver app agree on delivery time,warn,0,-,
+V15,orders vs driver_events,DB pickup_at agrees with driver app pickup,correct,5,driver app used (DB value is after delivery for these orders),"O00051, O00052, O00053, O00054, O00055"
+V16,orders vs driver_events,cancelled order has no pickup_at in DB,warn,68,DB pickup_at filled for cancelled orders with no driver pickup; DB pickup_at not trusted,"O00004, O00017, O00075, O00129, O00154"
+V17,driver_events,delivered is after picked_up,quarantine,0,-,
+V18,driver_events,picked_up is after driver assignment,warn,14,"kept; gap is seconds to minutes, likely clock skew between apps","O00026, O00142, O00380, O00406, O00427"
+V19,interventions,intervention belongs to a known order,quarantine,0,-,
+V20,interventions,intervention happens after the order was created,quarantine,1,excluded from intervention analysis,INT-00268
+V21,interventions vs dispatch,logged DRIVER_REASSIGNMENT is visible in dispatch,warn,147,"kept; the two systems disagree, so intervention results are indicative only","INT-00003, INT-00008, INT-00009, INT-00011, INT-00014"
+V22,run,quarantined orders <= 5% of delivered,block,0,-,
